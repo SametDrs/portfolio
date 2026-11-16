@@ -1,0 +1,29 @@
+---
+import { dictionaries, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const t = dictionaries[Astro.props.lang].about;
+---
+
+<section id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="reveal">
+        <div class="eyebrow">{t.eyebrow}</div>
+        <h2 class="display sm">{t.pre} <span class="hl">{t.hl}</span> {t.post}</h2>
+      </div>
+      <div class="text reveal" style="--d:.12s">
+        <p>{t.p1}</p>
+        <p>{t.p2}</p>
+      </div>
+    </div>
+    <div class="stats">
+      {t.stats.map((s, i) => (
+        <div class="stat reveal" style={`--d:${i * 0.1}s`}><b>{s.value}</b><span>{s.label}</span></div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+---
+import { dictionaries, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const t = dictionaries[Astro.props.lang].contact;
+---
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal">{t.eyebrow}</div>
+    <h2 class="display reveal">{t.pre} <span class="hl">{t.hl}</span> {t.post}</h2>
+    <div class="links reveal">
+      <a class="btn" href={`mailto:${t.email}`}>{t.email}</a>
+      <a class="btn ghost" href="https://github.com/SametDrs" target="_blank" rel="noopener noreferrer">{t.github}</a>
+      <a class="btn ghost" href="https://instagram.com/sametdrs3" target="_blank" rel="noopener noreferrer">{t.instagram}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+import { dictionaries, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const t = dictionaries[Astro.props.lang].journey;
+---
+
+<section id="journey">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">{t.eyebrow}</div>
+      <h2 class="display sm">{t.pre} <span class="hl blue">{t.hl}</span> {t.post}</h2>
+    </div>
+    <ol class="timeline" style="list-style:none">
+      {t.items.map((it, i) => (
+        <li class="step reveal" style={`--d:${i * 0.12}s`}>
+          <div class="dot" aria-hidden="true">{it.step}</div>
+          <div class="body">
+            <div class="eyebrow">{it.label}</div>
+            <h3>{it.title}</h3>
+            <p>{it.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

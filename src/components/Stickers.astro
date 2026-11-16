@@ -1,0 +1,30 @@
+---
+import { dictionaries, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const t = dictionaries[Astro.props.lang].stickers;
+
+const stickers = [
+  { label: "Python", style: "left:6%;top:14%;transform:rotate(-8deg);background:var(--pop)" },
+  { label: "TypeScript", style: "left:30%;top:52%;transform:rotate(6deg);background:var(--cobalt);color:#fff" },
+  { label: "Rust", style: "left:58%;top:12%;transform:rotate(12deg)" },
+  { label: "C#", style: "left:74%;top:55%;transform:rotate(-10deg);background:var(--ink);color:var(--paper)" },
+  { label: "Astro", style: "left:38%;top:10%;transform:rotate(-3deg)" },
+  { label: "Next.js", style: "left:8%;top:62%;transform:rotate(9deg)" },
+  { label: "C++", style: "left:56%;top:64%;transform:rotate(-5deg);background:var(--pop)" },
+];
+---
+
+<section class="play">
+  <div class="wrap">
+    <div class="eyebrow reveal">{t.eyebrow}</div>
+    <h2 class="display sm reveal">{t.pre} <span class="hl blue">{t.hl}</span> {t.post}</h2>
+    <p class="reveal">{t.text}</p>
+    <div class="board reveal" id="board" role="group" aria-label={t.boardLabel}>
+      {stickers.map((s) => <div class="sticker" style={s.style}>{s.label}</div>)}
+    </div>
+  </div>
+</section>

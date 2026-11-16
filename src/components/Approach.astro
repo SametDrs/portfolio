@@ -1,0 +1,27 @@
+---
+import { dictionaries, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const t = dictionaries[Astro.props.lang].approach;
+---
+
+<section class="approach dark" id="approach">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="eyebrow">{t.eyebrow}</div>
+      <h2 class="display sm">{t.pre} <span class="hl">{t.hl}</span> {t.post}</h2>
+    </div>
+    <div class="points">
+      {t.items.map((it, i) => (
+        <div class="point reveal" style={`--d:${i * 0.12}s`}>
+          <b>0{i + 1}</b>
+          <h3>{it.title}</h3>
+          <p>{it.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

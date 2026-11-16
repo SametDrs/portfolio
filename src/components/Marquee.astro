@@ -1,0 +1,9 @@
+---
+import { marquee } from "../data/skills";
+---
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    {[0, 1].map(() => marquee.map((s) => <span>{s}</span>))}
+  </div>
+</div>

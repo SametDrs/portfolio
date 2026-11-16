@@ -1,0 +1,46 @@
+---
+import "@fontsource/anton/400.css";
+import "@fontsource-variable/geist";
+import "../styles/global.css";
+import { dictionaries, otherLang, paths, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dictionaries[lang];
+const other = otherLang(lang);
+---
+
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <meta name="theme-color" content="#f3f0e8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" hreflang="tr" href={paths.tr} />
+    <link rel="alternate" hreflang="en" href={paths.en} />
+    <link rel="alternate" hreflang="x-default" href={paths.tr} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Samet Dursun" />
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:locale" content={t.ogLocale} />
+    <meta property="og:locale:alternate" content={dictionaries[other].ogLocale} />
+    <meta name="twitter:card" content="summary" />
+    <script is:inline>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <slot />
+    <script>
+      import "../scripts/reveal";
+      import "../scripts/stickers";
+    </script>
+  </body>
+</html>

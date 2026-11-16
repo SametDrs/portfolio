@@ -1,0 +1,11 @@
+---
+import { dictionaries, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const t = dictionaries[Astro.props.lang];
+---
+
+<footer>{t.footer}</footer>

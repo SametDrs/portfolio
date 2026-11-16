@@ -1,0 +1,43 @@
+---
+import { dictionaries, otherLang, paths, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dictionaries[lang].nav;
+const other = otherLang(lang);
+const links = [
+  { href: "#about", label: t.about },
+  { href: "#skills", label: t.skills },
+  { href: "#projects", label: t.projects },
+  { href: "#contact", label: t.contact },
+];
+---
+
+<nav class="nav" aria-label={t.ariaMain}>
+  <a class="logo" href="#top" aria-label={t.homeLabel}>SAMET.</a>
+  {links.map((l) => <a class="link" href={l.href}>{l.label}</a>)}
+  <details class="menu">
+    <summary>{t.menu}</summary>
+    <ul>
+      {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+    </ul>
+  </details>
+  <a class="lang" href={paths[other]} hreflang={other} lang={other} aria-label={t.otherLangLabel}>{t.otherLang}</a>
+</nav>
+
+<script>
+  const menu = document.querySelector<HTMLDetailsElement>(".nav .menu");
+  if (menu) {
+    const close = () => { menu.open = false; };
+    menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
+    document.addEventListener("click", (e) => {
+      if (menu.open && !menu.contains(e.target as Node)) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+  }
+</script>
