@@ -40,7 +40,7 @@ export const en: Dict = {
     p2: "These days I mostly think about one thing: which projects should I use AI models in, and how do I use them efficiently?",
     stats: [
       { value: "2", label: "company internships" },
-      { value: "7", label: "open-source projects" },
+      { value: "6", label: "open-source projects" },
       { value: "10+", label: "languages and frameworks" },
     ],
   },
@@ -94,10 +94,11 @@ export const en: Dict = {
     },
   },
   projects: {
-    eyebrow: "Open source",
-    pre: "Things I've",
-    hl: "built",
-    post: "",
+    sections: {
+      open: { eyebrow: "Open source", pre: "Things I've", hl: "built", post: "" },
+      closed: { eyebrow: "Not open source", pre: "Closed-source", hl: "projects", post: "" },
+      ongoing: { eyebrow: "In progress", pre: "What I'm", hl: "working on", post: "" },
+    },
     github: "GitHub →",
   },
   approach: {

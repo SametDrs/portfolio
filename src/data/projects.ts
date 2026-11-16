@@ -1,9 +1,14 @@
 import type { Lang } from "../i18n";
 
+export type ProjectGroup = "open" | "closed" | "ongoing";
+
 export interface Project {
   name: string;
+  /** Which section the card belongs to. */
+  group: ProjectGroup;
   badge: string | Record<Lang, string>;
-  href: string;
+  /** Omitted for projects that have no public link yet. */
+  href?: string;
   variant: "wide" | "pop" | "full" | "two" | "";
   /** Link label for non-GitHub projects (shown instead of the "GitHub →" text). */
   linkLabel?: string;
@@ -14,6 +19,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    group: "open",
     name: "peerly",
     badge: "Rust · Tauri",
     href: "https://github.com/SametDrs/peerly",
@@ -24,6 +30,7 @@ export const projects: Project[] = [
     },
   },
   {
+    group: "open",
     name: "Launchly",
     badge: "C#",
     href: "https://github.com/SametDrs/Launchly",
@@ -34,6 +41,7 @@ export const projects: Project[] = [
     },
   },
   {
+    group: "open",
     name: "RiftPilot",
     badge: "Python",
     href: "https://github.com/SametDrs/RiftPilot",
@@ -44,6 +52,7 @@ export const projects: Project[] = [
     },
   },
   {
+    group: "open",
     name: "SDPI",
     badge: "C++",
     href: "https://github.com/SametDrs/SDPI",
@@ -54,10 +63,11 @@ export const projects: Project[] = [
     },
   },
   {
+    group: "closed",
     name: "Harman Digital",
     badge: "Web",
     href: "https://harman.alesta.dev",
-    variant: "",
+    variant: "full",
     linkLabel: "harman.alesta.dev →",
     desc: {
       tr: "Kafe, restoran, çiçekçi ve ajanslar için web siteleri, web otomasyonu, masaüstü ve mobil uygulamalar sunan stüdyo.",
@@ -65,6 +75,7 @@ export const projects: Project[] = [
     },
   },
   {
+    group: "open",
     name: "Özlem Çiçekçilik",
     badge: { tr: "Web · Müşteri işi", en: "Web · Client work" },
     href: "https://tuzlaozlemcicekcilik.com",
@@ -77,6 +88,7 @@ export const projects: Project[] = [
     },
   },
   {
+    group: "open",
     name: "Portfolio",
     badge: "Astro · TypeScript",
     href: "https://github.com/SametDrs/portfolio",
@@ -84,6 +96,26 @@ export const projects: Project[] = [
     desc: {
       tr: "Şu an baktığın site: Astro ile yazılmış, iki dilli, GSAP ve Lenis ile scroll efektli kişisel portfolio.",
       en: "The site you are looking at: a bilingual personal portfolio built with Astro, with GSAP and Lenis scroll effects.",
+    },
+  },
+  {
+    group: "ongoing",
+    name: "SD Studio",
+    badge: { tr: "Yapay zeka ajanları · Devam ediyor", en: "AI agents · In progress" },
+    variant: "two",
+    desc: {
+      tr: "YouTube için içeriği otomatik üretip yükleyen yapay zeka ajanları kullanan sistem: fikirden yayına tüm süreç ajanlarla yürür.",
+      en: "A system that uses AI agents to automatically produce and upload content to YouTube, running the whole pipeline from idea to publish.",
+    },
+  },
+  {
+    group: "ongoing",
+    name: "SD Aura",
+    badge: { tr: "Yapay zeka · Devam ediyor", en: "AI · In progress" },
+    variant: "",
+    desc: {
+      tr: "Kişisel yapay zeka asistanı.",
+      en: "A personal AI assistant.",
     },
   },
 ];

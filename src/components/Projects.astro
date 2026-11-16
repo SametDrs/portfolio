@@ -1,20 +1,23 @@
 ---
 import { dictionaries, type Lang } from "../i18n";
-import { projects } from "../data/projects";
+import { projects as all, type ProjectGroup } from "../data/projects";
 
 interface Props {
   lang: Lang;
+  group?: ProjectGroup;
 }
 
-const { lang } = Astro.props;
+const { lang, group = "open" } = Astro.props;
 const t = dictionaries[lang].projects;
+const s = t.sections[group];
+const projects = all.filter((p) => p.group === group);
 ---
 
-<section class="projects dark" id="projects">
+<section class="projects dark" id={group === "open" ? "projects" : `projects-${group}`}>
   <div class="wrap">
     <div class="head reveal">
-      <div class="eyebrow">{t.eyebrow}</div>
-      <h2 class="display sm">{t.pre} <span class="hl">{t.hl}</span> {t.post}</h2>
+      <div class="eyebrow">{s.eyebrow}</div>
+      <h2 class="display sm">{s.pre} <span class="hl">{s.hl}</span> {s.post}</h2>
     </div>
     <div class="grid">
       {projects.map((p, i) => {
@@ -28,7 +31,7 @@ const t = dictionaries[lang].projects;
             <span class="badge">{p.badge[lang]}</span>
           );
         // A card with a second link (live site + repo) cannot be one big anchor.
-        return p.repo ? (
+        return p.repo && p.href ? (
           <div class:list={cls} style={delay}>
             {badge}
             <h3>{p.name}</h3>
@@ -37,6 +40,12 @@ const t = dictionaries[lang].projects;
               <a href={p.href} target="_blank" rel="noopener noreferrer">{p.linkLabel ?? t.github}</a>
               <a href={p.repo} target="_blank" rel="noopener noreferrer">{t.github}</a>
             </span>
+          </div>
+        ) : !p.href ? (
+          <div class:list={cls} style={delay}>
+            {badge}
+            <h3>{p.name}</h3>
+            <p>{p.desc[lang]}</p>
           </div>
         ) : (
           <a class:list={cls} style={delay} href={p.href} target="_blank" rel="noopener noreferrer">

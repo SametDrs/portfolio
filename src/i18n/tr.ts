@@ -38,7 +38,7 @@ export const tr = {
     p2: "Bugünlerde en çok yapay zeka modellerini hangi projede, nasıl verimli kullanırım? sorusuna kafa yoruyorum.",
     stats: [
       { value: "2", label: "şirkette staj" },
-      { value: "7", label: "açık kaynak proje" },
+      { value: "6", label: "açık kaynak proje" },
       { value: "10+", label: "dil ve framework" },
     ],
   },
@@ -92,10 +92,11 @@ export const tr = {
     },
   },
   projects: {
-    eyebrow: "Açık kaynak",
-    pre: "Uğraştığım",
-    hl: "projeler",
-    post: "",
+    sections: {
+      open: { eyebrow: "Açık kaynak", pre: "Uğraştığım", hl: "projeler", post: "" },
+      closed: { eyebrow: "Açık kaynak değil", pre: "Kapalı", hl: "projeler", post: "" },
+      ongoing: { eyebrow: "Devam eden", pre: "Üzerinde çalıştığım", hl: "projeler", post: "" },
+    },
     github: "GitHub →",
   },
   approach: {
