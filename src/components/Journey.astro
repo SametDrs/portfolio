@@ -16,7 +16,7 @@ const t = dictionaries[Astro.props.lang].journey;
     </div>
     <ol class="timeline" style="list-style:none">
       {t.items.map((it, i) => (
-        <li class="step reveal" style={`--d:${i * 0.12}s`}>
+        <li class="step reveal" style={`--d:${i * 0.12}s;--row:${i + 1}`}>
           <div class="dot" aria-hidden="true">{it.step}</div>
           <div class="body">
             <div class="eyebrow">{it.label}</div>

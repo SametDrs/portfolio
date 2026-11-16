@@ -35,7 +35,7 @@ export const tr = {
     hl: "hâlâ",
     post: "sürüyor",
     p1: "Handan Hayrettin Yelkikanat MTAL'de Bilişim Teknolojileri okudum; Pivot Elektronik ve LookUs'ta staj yaptım. Şu an Bolu Abant İzzet Baysal Üniversitesi'nde Bilgisayar Programcılığı öğrencisiyim.",
-    p2: "Bugünlerde en çok şuna kafa yoruyorum: yapay zeka modellerini hangi projede, nasıl verimli kullanırım?",
+    p2: "Bugünlerde en çok yapay zeka modellerini hangi projede, nasıl verimli kullanırım? sorusuna kafa yoruyorum.",
     stats: [
       { value: "2", label: "şirkette staj" },
       { value: "5", label: "açık kaynak proje" },
@@ -52,19 +52,31 @@ export const tr = {
         step: "01",
         label: "Lise",
         title: "Handan Hayrettin Yelkikanat MTAL",
-        text: "Bilişim Teknolojileri bölümü.",
+        text: "Bilişim Teknolojileri bölümünde okudum.",
       },
       {
         step: "02",
         label: "Staj",
-        title: "Pivot Elektronik ve LookUs",
-        text: "Lisede stajyer olarak bu iki şirkette staj yaptım.",
+        title: "Pivot Elektronik",
+        text: "Lise döneminde stajyer olarak çalıştım.",
       },
       {
         step: "03",
-        label: "Şu an",
+        label: "Staj",
+        title: "LookUs",
+        text: "Lise döneminde stajyer olarak çalıştığım diğer şirket.",
+      },
+      {
+        step: "04",
+        label: "Üniversite",
         title: "Bolu Abant İzzet Baysal Üniversitesi",
-        text: "Bilgisayar Programcılığı.",
+        text: "Bilgisayar Programcılığı okuyorum.",
+      },
+      {
+        step: "05",
+        label: "Şu an",
+        title: "Açık kaynak ve yapay zeka",
+        text: "Projelerimi açık kaynak paylaşıyor, yapay zeka modellerini verimli kullanmayı öğreniyorum.",
       },
     ],
   },
@@ -123,6 +135,7 @@ export const tr = {
     github: "GitHub",
     instagram: "Instagram",
   },
+  cv: { label: "CV indir ↓", file: "/cv.pdf", download: "Samet-Dursun-CV.pdf" },
   footer: "© 2026 Samet Dursun",
 };
 

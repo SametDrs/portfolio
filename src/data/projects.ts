@@ -2,10 +2,13 @@ import type { Lang } from "../i18n";
 
 export interface Project {
   name: string;
-  badge: string;
+  badge: string | Record<Lang, string>;
   href: string;
-  variant: "wide" | "pop" | "";
-  external?: boolean;
+  variant: "wide" | "pop" | "full" | "";
+  /** Link label for non-GitHub projects (shown instead of the "GitHub →" text). */
+  linkLabel?: string;
+  /** Source repository, for projects whose main link is a live site. */
+  repo?: string;
   desc: Record<Lang, string>;
 }
 
@@ -55,10 +58,22 @@ export const projects: Project[] = [
     badge: "Web",
     href: "https://harman.alesta.dev",
     variant: "",
-    external: true,
+    linkLabel: "harman.alesta.dev →",
     desc: {
       tr: "Kafe, restoran, çiçekçi ve ajanslar için web siteleri, web otomasyonu, masaüstü ve mobil uygulamalar sunan stüdyo.",
       en: "A studio offering websites, web automation, desktop and mobile apps for cafés, restaurants, florists and agencies.",
+    },
+  },
+  {
+    name: "Özlem Çiçekçilik",
+    badge: { tr: "Web · Müşteri işi", en: "Web · Client work" },
+    href: "https://tuzlaozlemcicekcilik.com",
+    variant: "full",
+    linkLabel: "tuzlaozlemcicekcilik.com →",
+    repo: "https://github.com/fvrhatb/ozlemcicekcilik",
+    desc: {
+      tr: "Tuzla'daki bir çiçekçi için yayında olan site: ürün kataloğu, öne çıkan ürünler ve aynı gün teslimatlı online sipariş.",
+      en: "A live website for a florist in Tuzla, Istanbul: product catalogue, featured products and online ordering with same-day delivery.",
     },
   },
 ];

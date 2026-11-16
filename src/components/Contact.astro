@@ -6,6 +6,7 @@ interface Props {
 }
 
 const t = dictionaries[Astro.props.lang].contact;
+const cv = dictionaries[Astro.props.lang].cv;
 ---
 
 <section class="contact" id="contact">
@@ -16,6 +17,7 @@ const t = dictionaries[Astro.props.lang].contact;
       <a class="btn" href={`mailto:${t.email}`}>{t.email}</a>
       <a class="btn ghost" href="https://github.com/SametDrs" target="_blank" rel="noopener noreferrer">{t.github}</a>
       <a class="btn ghost" href="https://instagram.com/sametdrs3" target="_blank" rel="noopener noreferrer">{t.instagram}</a>
+      <a class="btn ghost" href={cv.file} download={cv.download}>{cv.label}</a>
     </div>
   </div>
 </section>

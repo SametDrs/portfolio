@@ -9,12 +9,12 @@ const t = dictionaries[Astro.props.lang].hero;
 ---
 
 <header class="hero wrap" id="top">
-  {t.tags.map((tag) => <div class="tag">{tag}</div>)}
+  {t.tags.map((tag) => <div class="tag reveal">{tag}</div>)}
 
-  <div class="eyebrow">{t.eyebrow}</div>
-  <h1 class="display">{t.titleA} <span class="hl">{t.hl1}</span><br />{t.titleB} <span class="hl blue">{t.hl2}</span></h1>
-  <p>{t.text}</p>
-  <div class="cta">
+  <div class="eyebrow reveal">{t.eyebrow}</div>
+  <h1 class="display reveal">{t.titleA} <span class="hl">{t.hl1}</span><br />{t.titleB} <span class="hl blue">{t.hl2}</span></h1>
+  <p class="reveal">{t.text}</p>
+  <div class="cta reveal">
     <a class="btn" href="#projects">{t.ctaProjects}</a>
     <a class="btn ghost" href="#contact">{t.ctaContact}</a>
   </div>
