@@ -4,18 +4,6 @@ Kişisel portfolio sitem. Astro ile yazılmış, statik, Türkçe ve İngilizce 
 
 ![Ana ekran](docs/hero.webp)
 
-## Bölümler
-
-| Hakkımda | Yolculuk |
-| --- | --- |
-| ![Hakkımda bölümü](docs/about.webp) | ![Yolculuk bölümü](docs/journey.webp) |
-
-| Yetenekler | Projeler |
-| --- | --- |
-| ![Yetenekler bölümü](docs/skills.webp) | ![Projeler bölümü](docs/projects.webp) |
-
-Sayfada ayrıca kayan teknoloji şeridi, "Nasıl çalışırım" bölümü, sürüklenebilir çıkartma alanı ve iletişim bölümü var.
-
 ## Özellikler
 
 - **İki dil:** Türkçe `/` adresinde, İngilizce `/en/` adresinde. Metinlerin tamamı `src/i18n/` altında.
