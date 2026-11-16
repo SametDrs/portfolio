@@ -4,7 +4,7 @@ export interface Project {
   name: string;
   badge: string | Record<Lang, string>;
   href: string;
-  variant: "wide" | "pop" | "full" | "";
+  variant: "wide" | "pop" | "full" | "two" | "";
   /** Link label for non-GitHub projects (shown instead of the "GitHub →" text). */
   linkLabel?: string;
   /** Source repository, for projects whose main link is a live site. */
@@ -68,12 +68,22 @@ export const projects: Project[] = [
     name: "Özlem Çiçekçilik",
     badge: { tr: "Web · Müşteri işi", en: "Web · Client work" },
     href: "https://tuzlaozlemcicekcilik.com",
-    variant: "full",
+    variant: "two",
     linkLabel: "tuzlaozlemcicekcilik.com →",
     repo: "https://github.com/fvrhatb/ozlemcicekcilik",
     desc: {
       tr: "Tuzla'daki bir çiçekçi için yayında olan site: ürün kataloğu, öne çıkan ürünler ve aynı gün teslimatlı online sipariş.",
       en: "A live website for a florist in Tuzla, Istanbul: product catalogue, featured products and online ordering with same-day delivery.",
+    },
+  },
+  {
+    name: "Portfolio",
+    badge: "Astro · TypeScript",
+    href: "https://github.com/SametDrs/portfolio",
+    variant: "",
+    desc: {
+      tr: "Şu an baktığın site: Astro ile yazılmış, iki dilli, GSAP ve Lenis ile scroll efektli kişisel portfolio.",
+      en: "The site you are looking at: a bilingual personal portfolio built with Astro, with GSAP and Lenis scroll effects.",
     },
   },
 ];
