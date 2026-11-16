@@ -40,7 +40,7 @@ export const en: Dict = {
     p2: "These days I mostly think about one thing: which projects should I use AI models in, and how do I use them efficiently?",
     stats: [
       { value: "2", label: "company internships" },
-      { value: "5", label: "open-source projects" },
+      { value: "7", label: "open-source projects" },
       { value: "10+", label: "languages and frameworks" },
     ],
   },
@@ -135,6 +135,7 @@ export const en: Dict = {
     post: "",
     email: "samet.drs123@gmail.com",
     github: "GitHub",
+    linkedin: "LinkedIn",
     instagram: "Instagram",
   },
   cv: { label: "Download CV ↓", file: "/cv-en.pdf", download: "Samet-Dursun-CV.pdf" },

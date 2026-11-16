@@ -18,7 +18,7 @@ html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 body {
   font-family: "Segoe UI", system-ui, sans-serif;
   font-size: 9.6pt;
-  line-height: 1.45;
+  line-height: 1.42;
   color: #121212;
   background: #fff;
 }
@@ -38,8 +38,8 @@ h1 {
 .role { margin-top: 6px; color: #b6f23a; font-weight: 600; font-size: 10.5pt; }
 .contact { list-style: none; text-align: right; font-size: 9.2pt; line-height: 1.6; }
 
-main { padding: 8mm 16mm 0; }
-section { margin-bottom: 6mm; }
+main { padding: 6mm 16mm 0; }
+section { margin-bottom: 4.5mm; }
 h2 {
   font-family: "Anton", Impact, sans-serif; font-weight: 400;
   font-size: 13pt; text-transform: uppercase; letter-spacing: 0.04em;

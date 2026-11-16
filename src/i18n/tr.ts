@@ -38,7 +38,7 @@ export const tr = {
     p2: "Bugünlerde en çok yapay zeka modellerini hangi projede, nasıl verimli kullanırım? sorusuna kafa yoruyorum.",
     stats: [
       { value: "2", label: "şirkette staj" },
-      { value: "5", label: "açık kaynak proje" },
+      { value: "7", label: "açık kaynak proje" },
       { value: "10+", label: "dil ve framework" },
     ],
   },
@@ -133,6 +133,7 @@ export const tr = {
     post: "",
     email: "samet.drs123@gmail.com",
     github: "GitHub",
+    linkedin: "LinkedIn",
     instagram: "Instagram",
   },
   cv: { label: "CV indir ↓", file: "/cv.pdf", download: "Samet-Dursun-CV.pdf" },
