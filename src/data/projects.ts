@@ -118,4 +118,14 @@ export const projects: Project[] = [
       en: "A personal AI assistant.",
     },
   },
+  {
+    group: "ongoing",
+    name: "SD Games",
+    badge: { tr: "Oyun · Devam ediyor", en: "Games · In progress" },
+    variant: "",
+    desc: {
+      tr: "TikTok Games tarzında, kısa ve hızlı oynanan mobil oyunlar.",
+      en: "Short, fast-paced mobile games in the style of TikTok Games.",
+    },
+  },
 ];
