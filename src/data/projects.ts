@@ -76,6 +76,17 @@ export const projects: Project[] = [
   },
   {
     group: "open",
+    name: "Portfolio",
+    badge: "Astro · TypeScript",
+    href: "https://github.com/SametDrs/portfolio",
+    variant: "",
+    desc: {
+      tr: "Şu an baktığın site: Astro ile yazılmış, iki dilli, GSAP ve Lenis ile scroll efektli kişisel portfolio.",
+      en: "The site you are looking at: a bilingual personal portfolio built with Astro, with GSAP and Lenis scroll effects.",
+    },
+  },
+  {
+    group: "open",
     name: "Özlem Çiçekçilik",
     badge: { tr: "Web · Müşteri işi", en: "Web · Client work" },
     href: "https://tuzlaozlemcicekcilik.com",
@@ -85,17 +96,6 @@ export const projects: Project[] = [
     desc: {
       tr: "Tuzla'daki bir çiçekçi için yayında olan site: ürün kataloğu, öne çıkan ürünler ve aynı gün teslimatlı online sipariş.",
       en: "A live website for a florist in Tuzla, Istanbul: product catalogue, featured products and online ordering with same-day delivery.",
-    },
-  },
-  {
-    group: "open",
-    name: "Portfolio",
-    badge: "Astro · TypeScript",
-    href: "https://github.com/SametDrs/portfolio",
-    variant: "",
-    desc: {
-      tr: "Şu an baktığın site: Astro ile yazılmış, iki dilli, GSAP ve Lenis ile scroll efektli kişisel portfolio.",
-      en: "The site you are looking at: a bilingual personal portfolio built with Astro, with GSAP and Lenis scroll effects.",
     },
   },
   {
