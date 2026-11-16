@@ -65,3 +65,8 @@ docs/            README ekran görüntüleri
 - **Metinler:** `src/i18n/tr.ts` ve `src/i18n/en.ts`. İki dosya aynı anahtarları taşır.
 - **Projeler:** `src/data/projects.ts`.
 - **CV:** `cv/cv.tr.html` ve `cv/cv.en.html` düzenlenir, ardından PDF'ler yeniden üretilir. Komutlar [`cv/README.md`](cv/README.md) içinde.
+
+
+## 📄 Lisans
+
+Bu proje [MIT Lisansı](LICENSE) kapsamında açık kaynak olarak sunulmaktadır.
