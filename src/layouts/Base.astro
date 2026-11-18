@@ -11,6 +11,55 @@ interface Props {
 const { lang } = Astro.props;
 const t = dictionaries[lang];
 const other = otherLang(lang);
+
+// Mutlak adresler `astro.config.mjs` içindeki `site` değerinden üretilir.
+const abs = (path: string) => new URL(path, Astro.site).href;
+const canonical = abs(paths[lang]);
+const ogImage = abs("/og.jpg");
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${abs("/")}#website`,
+      url: abs("/"),
+      name: "Samet Dursun",
+      inLanguage: ["tr", "en"],
+      publisher: { "@id": `${abs("/")}#person` },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${canonical}#profile`,
+      url: canonical,
+      name: t.meta.title,
+      description: t.meta.description,
+      inLanguage: t.htmlLang,
+      isPartOf: { "@id": `${abs("/")}#website` },
+      mainEntity: { "@id": `${abs("/")}#person` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${abs("/")}#person`,
+      name: "Samet Dursun",
+      url: abs("/"),
+      image: abs("/avatar-bg.webp"),
+      jobTitle: t.meta.jobTitle,
+      description: t.meta.description,
+      address: { "@type": "PostalAddress", addressLocality: "İstanbul", addressCountry: "TR" },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Bolu Abant İzzet Baysal Üniversitesi",
+      },
+      knowsAbout: t.hero.tags,
+      sameAs: [
+        "https://github.com/SametDrs",
+        "https://www.linkedin.com/in/sametdrs/",
+        "https://instagram.com/sametdrs3",
+      ],
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -22,16 +71,31 @@ const other = otherLang(lang);
     <meta name="description" content={t.meta.description} />
     <meta name="theme-color" content="#f3f0e8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate" hreflang="tr" href={paths.tr} />
-    <link rel="alternate" hreflang="en" href={paths.en} />
-    <link rel="alternate" hreflang="x-default" href={paths.tr} />
-    <meta property="og:type" content="website" />
+    <meta name="author" content="Samet Dursun" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="tr" href={abs(paths.tr)} />
+    <link rel="alternate" hreflang="en" href={abs(paths.en)} />
+    <link rel="alternate" hreflang="x-default" href={abs(paths.tr)} />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Samet Dursun" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={t.meta.title} />
     <meta property="og:description" content={t.meta.description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={t.meta.title} />
     <meta property="og:locale" content={t.ogLocale} />
     <meta property="og:locale:alternate" content={dictionaries[other].ogLocale} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="profile:first_name" content="Samet" />
+    <meta property="profile:last_name" content="Dursun" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={t.meta.title} />
+    <meta name="twitter:description" content={t.meta.description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
     <script is:inline>
       document.documentElement.classList.add("js");
     </script>

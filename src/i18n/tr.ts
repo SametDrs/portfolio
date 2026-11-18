@@ -3,7 +3,8 @@ export const tr = {
   htmlLang: "tr",
   ogLocale: "tr_TR",
   meta: {
-    title: "Samet Dursun — Portfolyo",
+    title: "Samet Dursun — Web Geliştirici | Portfolyo",
+    jobTitle: "Web Geliştirici",
     description:
       "Samet Dursun: web siteleri, web otomasyonları, scraping araçları ve masaüstü uygulamaları geliştiren bir bilgisayar programcılığı öğrencisi.",
   },
@@ -38,7 +39,7 @@ export const tr = {
     p2: "Bugünlerde en çok yapay zeka modellerini hangi projede, nasıl verimli kullanırım? sorusuna kafa yoruyorum.",
     stats: [
       { value: "2", label: "şirkette staj" },
-      { value: "6", label: "açık kaynak proje" },
+      { value: "8", label: "açık kaynak proje" },
       { value: "10+", label: "dil ve framework" },
     ],
   },

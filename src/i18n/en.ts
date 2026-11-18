@@ -5,7 +5,8 @@ export const en: Dict = {
   htmlLang: "en",
   ogLocale: "en_US",
   meta: {
-    title: "Samet Dursun — Portfolio",
+    title: "Samet Dursun — Web Developer | Portfolio",
+    jobTitle: "Web Developer",
     description:
       "Samet Dursun: a computer programming student building websites, web automations, scraping tools and desktop applications.",
   },
@@ -40,7 +41,7 @@ export const en: Dict = {
     p2: "These days I mostly think about one thing: which projects should I use AI models in, and how do I use them efficiently?",
     stats: [
       { value: "2", label: "company internships" },
-      { value: "6", label: "open-source projects" },
+      { value: "8", label: "open-source projects" },
       { value: "10+", label: "languages and frameworks" },
     ],
   },
