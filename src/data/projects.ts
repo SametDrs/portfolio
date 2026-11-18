@@ -99,6 +99,28 @@ export const projects: Project[] = [
     },
   },
   {
+    group: "open",
+    name: "maps-isletmeler",
+    badge: "Python · FastAPI",
+    href: "https://github.com/SametDrs/maps-isletmeler",
+    variant: "",
+    desc: {
+      tr: "Google Maps'ten bölge ve işletme türüne göre işletme bilgilerini toplayan web uygulaması. Playwright, FastAPI, SQLite ve Excel çıktısı.",
+      en: "A web app that collects business info from Google Maps by region and business type. Playwright, FastAPI, SQLite and Excel export.",
+    },
+  },
+  {
+    group: "open",
+    name: "agent-watch-V2",
+    badge: "Python",
+    href: "https://github.com/SametDrs/agent-watch-v2",
+    variant: "full",
+    desc: {
+      tr: "Claude Code, Antigravity (agy) ve Codex alt ajanlarını terminalde canlı izleyen araç.",
+      en: "A live terminal watcher for Claude Code, Antigravity (agy) and Codex subagents.",
+    },
+  },
+  {
     group: "ongoing",
     name: "SD Studio",
     badge: { tr: "Yapay zeka ajanları · Devam ediyor", en: "AI agents · In progress" },
